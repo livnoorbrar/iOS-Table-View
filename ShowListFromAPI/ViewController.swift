@@ -64,8 +64,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMadeCell" , for: indexPath) as! ViewControllerTableViewCell
-        print(actorInfo[indexPath.row].actorName)
+        
         cell.nameOfAvatar.text = actorInfo[indexPath.row].actorName
+        cell.dateOfCreation.text = actorInfo[indexPath.row].actorCreatedOn
+        
         return(cell)
     }
     

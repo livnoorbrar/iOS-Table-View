@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -50,9 +49,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crl-Qg-E4b" userLabel="dateOfCreation">
-                                                    <rect key="frame" x="317" y="32.5" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crl-Qg-E4b" userLabel="dateOfCreation">
+                                                    <rect key="frame" x="301" y="56.5" width="72" height="11"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="crl-Qg-E4b" secondAttribute="height" multiplier="137:21" id="mFi-Ji-r0Y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -62,9 +64,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="sXi-UU-yRi" secondAttribute="bottom" id="5Xf-XC-Iew"/>
                                                 <constraint firstItem="sXi-UU-yRi" firstAttribute="leading" secondItem="Lqd-wf-mSQ" secondAttribute="leading" constant="8" id="H9D-3f-gYm"/>
                                                 <constraint firstItem="hs4-0y-S1U" firstAttribute="leading" secondItem="sXi-UU-yRi" secondAttribute="trailing" constant="16" id="WSr-Ua-cjD"/>
+                                                <constraint firstAttribute="bottom" secondItem="crl-Qg-E4b" secondAttribute="bottom" constant="2" id="hfY-0K-5z5"/>
+                                                <constraint firstAttribute="trailing" secondItem="crl-Qg-E4b" secondAttribute="trailing" constant="2" id="n6U-V6-1VW"/>
                                                 <constraint firstItem="hs4-0y-S1U" firstAttribute="centerY" secondItem="Lqd-wf-mSQ" secondAttribute="centerY" id="ohz-uV-0pW"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="crl-Qg-E4b" secondAttribute="bottom" constant="8" id="tg0-NC-WPL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="crl-Qg-E4b" secondAttribute="trailing" constant="8" id="vsR-RN-e55"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
