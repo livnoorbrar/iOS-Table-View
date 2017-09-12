@@ -30,7 +30,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }else{
                 do{
                     let fetchedData = try JSONSerialization.jsonObject(with: (data)!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSArray
-                    print(fetchedData)
+                    
+                    for eachFetchedAvatar in fetchedData{
+                        let avatar = eachFetchedAvatar as! Dictionary<String, Any>
+                        print(avatar)
+                    }
+                    
                 }
                 catch{
                 }
