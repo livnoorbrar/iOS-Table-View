@@ -40,11 +40,11 @@
                                                         <constraint firstAttribute="width" secondItem="sXi-UU-yRi" secondAttribute="height" multiplier="97:70" id="qVt-iA-Enm"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hs4-0y-S1U" userLabel="nameOfAvatar">
-                                                    <rect key="frame" x="121" y="25" width="42" height="21"/>
+                                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hs4-0y-S1U" userLabel="nameOfAvatar">
+                                                    <rect key="frame" x="121" y="25" width="150" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="98g-f9-akO"/>
-                                                        <constraint firstAttribute="width" secondItem="hs4-0y-S1U" secondAttribute="height" multiplier="2:1" id="qwy-T4-dZ5"/>
+                                                        <constraint firstAttribute="width" secondItem="hs4-0y-S1U" secondAttribute="height" multiplier="2:1" constant="108" id="qwy-T4-dZ5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -88,6 +88,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TYe-X5-Ki5" secondAttribute="bottom" id="zNN-es-dAg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatarTableView" destination="TYe-X5-Ki5" id="JeV-kt-K4O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

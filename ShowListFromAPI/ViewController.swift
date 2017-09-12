@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var avatarTableView: UITableView!
     var actorInfo: [Avatar] = []
     
     override func viewDidLoad() {
@@ -41,14 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         let actorImageUrl = actor["avatar_url"] as! String
                         self.actorInfo.append(Avatar(name: actorName, imageURL: actorImageUrl, dateOfCreation: creationTime))
                     }
-                    
-                    for eachAvatar in self.actorInfo {
-                        print("---------------------")
-                        print(eachAvatar.actorName)
-                        print(eachAvatar.actorImage)
-                        print(eachAvatar.actorCreatedOn)
-                    }
-                    
+                    self.avatarTableView.reloadData()
                 }
                 catch{
                 }
@@ -64,11 +58,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 1
+        print(actorInfo.count)
+        return actorInfo.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMadeCell" , for: indexPath) as! ViewControllerTableViewCell
+        print(actorInfo[indexPath.row].actorName)
+        cell.nameOfAvatar.text = actorInfo[indexPath.row].actorName
         return(cell)
     }
     
