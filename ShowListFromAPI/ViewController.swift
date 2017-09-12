@@ -36,7 +36,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         let creationTime = avatar["created_at"] as! String
                         let actor = avatar["actor"] as! Dictionary<String, Any>
                         let actorName = actor["login"] as! String
-                        print(actorName)
+                        let actorImageUrl = actor["avatar_url"] as! String
+                        print(actorImageUrl)
                     }
                     
                 }
