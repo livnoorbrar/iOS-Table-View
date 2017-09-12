@@ -27,14 +27,14 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customMadeCell" rowHeight="70" id="REY-6e-6Y8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customMadeCell" rowHeight="70" id="REY-6e-6Y8" customClass="ViewControllerTableViewCell" customModule="ShowListFromAPI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="REY-6e-6Y8" id="Lqd-wf-mSQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXi-UU-yRi">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXi-UU-yRi" userLabel="imageOfAvatar">
                                                     <rect key="frame" x="8" y="0.0" width="97" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="sXi-UU-yRi" secondAttribute="height" multiplier="97:70" id="qVt-iA-Enm"/>
@@ -50,7 +50,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crl-Qg-E4b">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crl-Qg-E4b" userLabel="dateOfCreation">
                                                     <rect key="frame" x="317" y="32.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -67,8 +67,17 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="crl-Qg-E4b" secondAttribute="trailing" constant="8" id="vsR-RN-e55"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateOfCreation" destination="crl-Qg-E4b" id="rue-ji-Qd1"/>
+                                            <outlet property="imageOfAvatar" destination="sXi-UU-yRi" id="D9a-Ix-mRQ"/>
+                                            <outlet property="nameOfAvatar" destination="hs4-0y-S1U" id="Hfi-ge-4ov"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="KmY-LW-B4Q"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oh4-5r-qHX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-39.200000000000003" y="-188.45577211394306"/>
         </scene>
     </scenes>
 </document>
