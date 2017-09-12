@@ -33,7 +33,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     
                     for eachFetchedAvatar in fetchedData{
                         let avatar = eachFetchedAvatar as! Dictionary<String, Any>
-                        print(avatar)
+                        let creationTime = avatar["created_at"] as! String
+                        print(creationTime)
                     }
                     
                 }
