@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    var actorInfo: [Avatar] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         parseData()
@@ -37,7 +39,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         let actor = avatar["actor"] as! Dictionary<String, Any>
                         let actorName = actor["login"] as! String
                         let actorImageUrl = actor["avatar_url"] as! String
-                        print(actorImageUrl)
+                        self.actorInfo.append(Avatar(name: actorName, imageURL: actorImageUrl, dateOfCreation: creationTime))
+                    }
+                    
+                    for eachAvatar in self.actorInfo {
+                        print("---------------------")
+                        print(eachAvatar.actorName)
+                        print(eachAvatar.actorImage)
+                        print(eachAvatar.actorCreatedOn)
                     }
                     
                 }
@@ -64,4 +73,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
+}
+
+class Avatar{
+    var actorName: String
+    var actorImage: String
+    var actorCreatedOn: String
+    
+    init(name: String, imageURL: String, dateOfCreation: String){
+        self.actorName = name
+        self.actorImage = imageURL
+        self.actorCreatedOn = dateOfCreation
+    }
 }
