@@ -34,7 +34,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     for eachFetchedAvatar in fetchedData{
                         let avatar = eachFetchedAvatar as! Dictionary<String, Any>
                         let creationTime = avatar["created_at"] as! String
-                        print(creationTime)
+                        let actor = avatar["actor"] as! Dictionary<String, Any>
+                        print(actor)
                     }
                     
                 }
