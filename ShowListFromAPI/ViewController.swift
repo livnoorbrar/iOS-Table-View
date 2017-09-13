@@ -66,7 +66,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMadeCell" , for: indexPath) as! ViewControllerTableViewCell
         
         cell.nameOfAvatar.text = actorInfo[indexPath.row].actorName
-        cell.dateOfCreation.text = actorInfo[indexPath.row].actorCreatedOn
+        let createdDate = DateFormatter().date(fromSwapiString: actorInfo[indexPath.row].actorCreatedOn)
+        let date = DateFormatter.localizedString(from: createdDate!, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
+        cell.dateOfCreation.text = date
+        
         let networkService = NetworkService(url: URL(string: actorInfo[indexPath.row].actorImage)!)
         networkService.downloadImage { (data) in
             let image = UIImage(data: data)
@@ -74,9 +77,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             DispatchQueue.main.async {
                 cell.imageOfAvatar.image = image
             }
-         
+            
         }
-
+        
         return(cell)
     }
     
@@ -119,4 +122,15 @@ class NetworkService{
         dataTask.resume()
     }
     
+}
+
+
+extension DateFormatter {
+    func date(fromSwapiString dateString: String) -> Date? {
+        // SWAPI dates look like: "2014-12-10T16:44:31Z"
+        self.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        self.timeZone = TimeZone(abbreviation: "UTC")
+        self.locale = Locale(identifier: "en_US_POSIX")
+        return self.date(from: dateString)
+    }
 }
