@@ -85,3 +85,29 @@ class Avatar{
         self.actorCreatedOn = dateOfCreation
     }
 }
+
+class NetworkService{
+    
+    lazy var session = URLSession(configuration: URLSessionConfiguration.default)
+    
+    let url: URL
+    
+    init(url: URL){
+        self.url = url
+    }
+    
+    func downloadImage(completion: @escaping ((Data) -> Void)) {
+        let request = URLRequest(url: self.url)
+        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            if error == nil {
+                if let data = data {
+                    completion(data)
+                }
+            }else {
+                print("error in downloading")
+            }
+        })
+        dataTask.resume()
+    }
+    
+}
