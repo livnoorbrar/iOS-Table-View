@@ -67,7 +67,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.nameOfAvatar.text = actorInfo[indexPath.row].actorName
         cell.dateOfCreation.text = actorInfo[indexPath.row].actorCreatedOn
-        
+        let networkService = NetworkService(url: URL(string: actorInfo[indexPath.row].actorImage)!)
+        networkService.downloadImage { (data) in
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.async {
+                cell.imageOfAvatar.image = image
+            }
+         
+        }
+
         return(cell)
     }
     
