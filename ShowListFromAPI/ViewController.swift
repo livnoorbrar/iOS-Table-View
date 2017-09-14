@@ -101,6 +101,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let destiantionVC = storyboard.instantiateViewController(withIdentifier: "DetailsOfAvatar") as? DetailedViewController {
             let selectedCell = avatarTableView.cellForRow(at: indexPath) as? ViewControllerTableViewCell
             destiantionVC.avatarImage = selectedCell?.imageOfAvatar.image
+            destiantionVC.avatarName = (selectedCell?.nameOfAvatar.text)!
             self.navigationController?.pushViewController(destiantionVC, animated: true)
         }
     }
