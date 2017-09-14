@@ -12,7 +12,7 @@ class DetailedViewController: UIViewController {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     var avatarImage: UIImage?
-    var avatarName : String = ""
+    var avatarName : String = "Detailed View"
     
     override func viewDidLoad() {
         super.viewDidLoad()        
