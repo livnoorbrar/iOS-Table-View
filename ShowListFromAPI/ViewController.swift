@@ -51,11 +51,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         task.resume()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         print(actorInfo.count)
         return actorInfo.count
@@ -100,9 +95,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var indexSelected = 0
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         indexSelected = indexPath.row
         print("index path\(indexPath)")
         print("index selected\(indexSelected)")
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
