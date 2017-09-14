@@ -46,7 +46,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="REY-6e-6Y8" id="Lqd-wf-mSQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXi-UU-yRi" userLabel="imageOfAvatar">
@@ -89,7 +89,6 @@
                                             <outlet property="dateOfCreation" destination="crl-Qg-E4b" id="rue-ji-Qd1"/>
                                             <outlet property="imageOfAvatar" destination="sXi-UU-yRi" id="D9a-Ix-mRQ"/>
                                             <outlet property="nameOfAvatar" destination="hs4-0y-S1U" id="Hfi-ge-4ov"/>
-                                            <segue destination="aWX-lb-SEo" kind="show" identifier="GoToDetail" id="DXc-9z-Cjb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -130,6 +129,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1p-3y-IEC" userLabel="AvatarImage">
                                 <rect key="frame" x="87" y="234" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="AvatarImage"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="jC3-Jb-Lv2"/>
@@ -137,7 +137,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration" identifier="AvatarImage"/>
                         <constraints>
                             <constraint firstItem="N1p-3y-IEC" firstAttribute="centerY" secondItem="rw2-kh-au8" secondAttribute="centerY" id="5E4-KG-miX"/>

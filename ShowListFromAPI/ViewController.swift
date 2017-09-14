@@ -96,18 +96,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        indexSelected = indexPath.row
-        print("index path\(indexPath)")
-        print("index selected\(indexSelected)")
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let destiantionVC = storyboard.instantiateViewController(withIdentifier: "DetailsOfAvatar") as? DetailedViewController {
+            let selectedCell = avatarTableView.cellForRow(at: indexPath) as? ViewControllerTableViewCell
+            destiantionVC.avatarImage = selectedCell?.imageOfAvatar.image
+            self.navigationController?.pushViewController(destiantionVC, animated: true)
+        }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as? DetailedViewController
-        let selectedCell = sender as? ViewControllerTableViewCell
-        destination?.avatarImage = selectedCell?.imageOfAvatar.image
-    }
-    
 }
 
 class Avatar{
