@@ -12,9 +12,12 @@ class DetailedViewController: UIViewController {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     var avatarImage: UIImage?
+    var avatarName : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()        
         avatarImageView.image = avatarImage
+        self.title = avatarName
     }
 
     override func didReceiveMemoryWarning() {

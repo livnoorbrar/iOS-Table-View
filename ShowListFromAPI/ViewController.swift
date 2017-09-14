@@ -51,6 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         task.resume()
     }
     
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         print(actorInfo.count)
         return actorInfo.count
