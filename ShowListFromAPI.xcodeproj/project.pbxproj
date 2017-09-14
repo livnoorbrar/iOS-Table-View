@@ -13,6 +13,7 @@
 		3D264A451F680919000980AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D264A441F680919000980AF /* Assets.xcassets */; };
 		3D264A481F680919000980AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D264A461F680919000980AF /* LaunchScreen.storyboard */; };
 		3D264A501F680DC5000980AF /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D264A4F1F680DC5000980AF /* ViewControllerTableViewCell.swift */; };
+		3D264A561F6A6AD9000980AF /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D264A551F6A6AD9000980AF /* DetailedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3D264A471F680919000980AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D264A491F680919000980AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D264A4F1F680DC5000980AF /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		3D264A551F6A6AD9000980AF /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				3D264A3D1F680919000980AF /* AppDelegate.swift */,
 				3D264A3F1F680919000980AF /* ViewController.swift */,
+				3D264A551F6A6AD9000980AF /* DetailedViewController.swift */,
 				3D264A411F680919000980AF /* Main.storyboard */,
 				3D264A4F1F680DC5000980AF /* ViewControllerTableViewCell.swift */,
 				3D264A441F680919000980AF /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			files = (
 				3D264A401F680919000980AF /* ViewController.swift in Sources */,
 				3D264A3E1F680919000980AF /* AppDelegate.swift in Sources */,
+				3D264A561F6A6AD9000980AF /* DetailedViewController.swift in Sources */,
 				3D264A501F680DC5000980AF /* ViewControllerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +310,7 @@
 				3D264A4E1F680919000980AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

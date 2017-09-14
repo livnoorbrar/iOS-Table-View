@@ -97,6 +97,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         dataTask.resume()
     }
     
+    var indexSelected = 0
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexSelected = indexPath.row
+        print("index path\(indexPath)")
+        print("index selected\(indexSelected)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? DetailedViewController
+        let selectedCell = sender as? ViewControllerTableViewCell
+        destination?.avatarImage = selectedCell?.imageOfAvatar.image
+    }
     
 }
 

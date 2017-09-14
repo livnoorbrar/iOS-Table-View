@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U9y-Il-iRJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="a9I-pe-Hfj">
+            <objects>
+                <navigationController id="U9y-Il-iRJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LDu-V7-RLa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9IZ-Nb-M4u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sh4-ga-cg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2290" y="-258"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -23,14 +39,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TYe-X5-Ki5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customMadeCell" rowHeight="70" id="REY-6e-6Y8" customClass="ViewControllerTableViewCell" customModule="ShowListFromAPI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="REY-6e-6Y8" id="Lqd-wf-mSQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sXi-UU-yRi" userLabel="imageOfAvatar">
@@ -50,7 +66,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crl-Qg-E4b" userLabel="dateOfCreation">
-                                                    <rect key="frame" x="301" y="56.5" width="72" height="11"/>
+                                                    <rect key="frame" x="301" y="57" width="72" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="crl-Qg-E4b" secondAttribute="height" multiplier="137:21" id="mFi-Ji-r0Y"/>
                                                     </constraints>
@@ -73,6 +89,7 @@
                                             <outlet property="dateOfCreation" destination="crl-Qg-E4b" id="rue-ji-Qd1"/>
                                             <outlet property="imageOfAvatar" destination="sXi-UU-yRi" id="D9a-Ix-mRQ"/>
                                             <outlet property="nameOfAvatar" destination="hs4-0y-S1U" id="Hfi-ge-4ov"/>
+                                            <segue destination="aWX-lb-SEo" kind="show" identifier="GoToDetail" id="DXc-9z-Cjb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -84,19 +101,56 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TYe-X5-Ki5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="E6Y-vZ-Ged"/>
                             <constraint firstAttribute="trailing" secondItem="TYe-X5-Ki5" secondAttribute="trailing" id="go2-zt-J0m"/>
+                            <constraint firstItem="TYe-X5-Ki5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hOe-pJ-dSv"/>
                             <constraint firstItem="TYe-X5-Ki5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uJk-O8-YTK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TYe-X5-Ki5" secondAttribute="bottom" id="zNN-es-dAg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lCF-xA-gBg"/>
                     <connections>
                         <outlet property="avatarTableView" destination="TYe-X5-Ki5" id="JeV-kt-K4O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.200000000000003" y="-188.45577211394306"/>
+            <point key="canvasLocation" x="-1298" y="-259"/>
+        </scene>
+        <!--Detailed View Controller-->
+        <scene sceneID="ilb-Gc-bo3">
+            <objects>
+                <viewController storyboardIdentifier="DetailsOfAvatar" id="aWX-lb-SEo" customClass="DetailedViewController" customModule="ShowListFromAPI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UaQ-mz-NHw"/>
+                        <viewControllerLayoutGuide type="bottom" id="6EY-jU-O4u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rw2-kh-au8" userLabel="Detailed Avatar View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1p-3y-IEC" userLabel="AvatarImage">
+                                <rect key="frame" x="87" y="234" width="200" height="200"/>
+                                <accessibility key="accessibilityConfiguration" identifier="AvatarImage"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="jC3-Jb-Lv2"/>
+                                    <constraint firstAttribute="width" constant="200" id="nJ8-Cj-Tgn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="AvatarImage"/>
+                        <constraints>
+                            <constraint firstItem="N1p-3y-IEC" firstAttribute="centerY" secondItem="rw2-kh-au8" secondAttribute="centerY" id="5E4-KG-miX"/>
+                            <constraint firstItem="N1p-3y-IEC" firstAttribute="centerX" secondItem="rw2-kh-au8" secondAttribute="centerX" id="924-e8-Znq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="N1p-3y-IEC" id="qVc-xc-MKi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVm-KE-VIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-407" y="-260"/>
         </scene>
     </scenes>
 </document>
