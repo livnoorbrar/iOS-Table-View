@@ -5,7 +5,6 @@
 //  Created by Livnoor Brar on 12/09/17.
 //  Copyright © 2017 Livnoor Brar. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -69,18 +68,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let createdDate = DateFormatter().date(fromSwapiString: actorInfo[indexPath.row].actorCreatedOn)
         let date = DateFormatter.localizedString(from: createdDate!, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
         cell.dateOfCreation.text = date
-        
-        let networkService = NetworkService(url: URL(string: actorInfo[indexPath.row].actorImage)!)
-        networkService.downloadImage { (data) in
-            let image = UIImage(data: data)
-            
+
+        downloadImage (url: actorInfo[indexPath.row].actorImage,completion: { (data) in
             DispatchQueue.main.async {
+                let image = UIImage(data: data)
                 cell.imageOfAvatar.image = image
             }
             
-        }
+        })
         
         return(cell)
+    }
+    
+    
+    func downloadImage(url: String, completion: @escaping ((Data) -> Void)) {
+        let urlToLoadFrom = URL(string: url)
+        let request = URLRequest(url: urlToLoadFrom!)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            if error == nil {
+                if let data = data {
+                    completion(data)
+                }
+            }else {
+                print("error in downloading")
+            }
+        })
+        dataTask.resume()
     }
     
     
@@ -97,33 +111,6 @@ class Avatar{
         self.actorCreatedOn = dateOfCreation
     }
 }
-
-class NetworkService{
-    
-    lazy var session = URLSession(configuration: URLSessionConfiguration.default)
-    
-    let url: URL
-    
-    init(url: URL){
-        self.url = url
-    }
-    
-    func downloadImage(completion: @escaping ((Data) -> Void)) {
-        let request = URLRequest(url: self.url)
-        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            if error == nil {
-                if let data = data {
-                    completion(data)
-                }
-            }else {
-                print("error in downloading")
-            }
-        })
-        dataTask.resume()
-    }
-    
-}
-
 
 extension DateFormatter {
     func date(fromSwapiString dateString: String) -> Date? {
