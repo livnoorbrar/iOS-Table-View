@@ -63,8 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMadeCell" , for: indexPath) as! ViewControllerTableViewCell
         
-//        cell.nameOfAvatar.text = actorInfo[indexPath.row].actorName
-        cell.nameOfAvatar.text = " 'Hello' is a song by English singer Adele, released on 23 October 2015 by XL Recordings as the lead single from her third studio album, 25 (2015). Adele co-wrote the song with her producer, Greg Kurstin. 'Hello' is a piano ballad with soul influences, and lyrics that discuss themes of nostalgia and regret."
+        cell.nameOfAvatar.text = actorInfo[indexPath.row].actorName
         let createdDate = DateFormatter().date(fromSwapiString: actorInfo[indexPath.row].actorCreatedOn)
         let date = DateFormatter.localizedString(from: createdDate!, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
         cell.dateOfCreation.text = date
