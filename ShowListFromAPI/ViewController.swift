@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "My Training App"
+        avatarTableView.estimatedRowHeight = 80.0
+        avatarTableView.rowHeight = UITableViewAutomaticDimension
         parseData()
     }
     
