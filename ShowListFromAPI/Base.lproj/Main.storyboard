@@ -147,30 +147,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1p-3y-IEC" userLabel="AvatarImage">
-                                <rect key="frame" x="87" y="234" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="AvatarImage"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Srb-bB-Qvz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="272"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIm-OT-bT7" userLabel="Holding View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="272"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1p-3y-IEC" userLabel="AvatarImage">
+                                                <rect key="frame" x="8" y="8" width="359" height="200"/>
+                                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="AvatarImage"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="l0j-Bl-Z11"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Hello" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMp-mF-Igl">
+                                                <rect key="frame" x="8" y="208" width="359" height="64"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="N1p-3y-IEC" firstAttribute="leading" secondItem="CIm-OT-bT7" secondAttribute="leading" constant="8" id="2ds-pL-vuT"/>
+                                            <constraint firstAttribute="trailing" secondItem="XMp-mF-Igl" secondAttribute="trailing" constant="8" id="4lb-XG-ICA"/>
+                                            <constraint firstItem="XMp-mF-Igl" firstAttribute="leading" secondItem="CIm-OT-bT7" secondAttribute="leading" constant="8" id="Gaf-gN-23D"/>
+                                            <constraint firstAttribute="trailing" secondItem="N1p-3y-IEC" secondAttribute="trailing" constant="8" id="LEW-Pa-OuS"/>
+                                            <constraint firstAttribute="bottom" secondItem="XMp-mF-Igl" secondAttribute="bottom" id="UaW-6Y-bOO"/>
+                                            <constraint firstItem="XMp-mF-Igl" firstAttribute="top" secondItem="N1p-3y-IEC" secondAttribute="bottom" id="VeB-hc-Nqf"/>
+                                            <constraint firstItem="N1p-3y-IEC" firstAttribute="top" secondItem="CIm-OT-bT7" secondAttribute="top" constant="8" id="cFY-0e-Aob"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="jC3-Jb-Lv2"/>
-                                    <constraint firstAttribute="width" constant="200" id="nJ8-Cj-Tgn"/>
+                                    <constraint firstAttribute="trailing" secondItem="CIm-OT-bT7" secondAttribute="trailing" id="5WD-xo-BNQ"/>
+                                    <constraint firstItem="CIm-OT-bT7" firstAttribute="top" secondItem="Srb-bB-Qvz" secondAttribute="top" id="Rt6-xK-WoM"/>
+                                    <constraint firstItem="CIm-OT-bT7" firstAttribute="centerX" secondItem="Srb-bB-Qvz" secondAttribute="centerX" id="bmg-iW-UfI"/>
+                                    <constraint firstItem="CIm-OT-bT7" firstAttribute="leading" secondItem="Srb-bB-Qvz" secondAttribute="leading" id="fM6-KF-AlF"/>
+                                    <constraint firstAttribute="bottom" secondItem="CIm-OT-bT7" secondAttribute="bottom" id="mY4-EH-ew9"/>
+                                    <constraint firstItem="CIm-OT-bT7" firstAttribute="centerY" secondItem="Srb-bB-Qvz" secondAttribute="centerY" id="qLQ-Rg-huf"/>
                                 </constraints>
-                            </imageView>
+                                <connections>
+                                    <outlet property="delegate" destination="aWX-lb-SEo" id="Xtl-54-soW"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration" identifier="AvatarImage"/>
                         <constraints>
-                            <constraint firstItem="N1p-3y-IEC" firstAttribute="centerY" secondItem="rw2-kh-au8" secondAttribute="centerY" id="5E4-KG-miX"/>
-                            <constraint firstItem="N1p-3y-IEC" firstAttribute="centerX" secondItem="rw2-kh-au8" secondAttribute="centerX" id="924-e8-Znq"/>
+                            <constraint firstItem="Srb-bB-Qvz" firstAttribute="leading" secondItem="rw2-kh-au8" secondAttribute="leading" id="2ca-ZI-nXI"/>
+                            <constraint firstItem="Srb-bB-Qvz" firstAttribute="top" secondItem="rw2-kh-au8" secondAttribute="top" id="H6D-WY-9Ir"/>
+                            <constraint firstItem="Srb-bB-Qvz" firstAttribute="leading" secondItem="rw2-kh-au8" secondAttribute="leading" id="U00-NJ-cla"/>
+                            <constraint firstAttribute="trailing" secondItem="Srb-bB-Qvz" secondAttribute="trailing" id="aGf-of-Igt"/>
+                            <constraint firstItem="Srb-bB-Qvz" firstAttribute="top" secondItem="rw2-kh-au8" secondAttribute="top" id="eOI-lo-bQw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="DescriptionText" destination="XMp-mF-Igl" id="fjO-1W-mv8"/>
                         <outlet property="avatarImageView" destination="N1p-3y-IEC" id="qVc-xc-MKi"/>
+                        <outlet property="holdingView" destination="CIm-OT-bT7" id="hnO-IM-y4H"/>
+                        <outlet property="scrollView" destination="Srb-bB-Qvz" id="rKs-Fm-Zyf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVm-KE-VIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-407" y="-260"/>
+            <point key="canvasLocation" x="-425" y="-259"/>
         </scene>
     </scenes>
 </document>
